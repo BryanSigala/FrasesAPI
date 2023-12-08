@@ -1,0 +1,50 @@
+### Obtenemos todos los registros de la BD frases
+GET http://localhost:3000/frases
+
+### Obtenemos el registro de una sola frase por su ID
+GET http://localhost:3000/frases/65729d01d8db9f9757f6a80a
+
+### Hacemos registramos nuevos datos por un JSON
+POST http://localhost:3000/frases
+Content-Type: application/json
+
+{
+    "character_name": "Jaguar D. Saul",
+    "origen": {
+        "nombreIP": "One Piece",
+        "fechaCreacionOrigen": "1997-12-12",
+        "media": "Anime", 
+        "genero": "Aventura/Fantasía"
+    },
+    "frases": [
+        {
+            "frase": "¡Nadie nace para estar solo!",
+            "fechaFrase": "2006-01-30"
+        }
+    ],
+    "fechaCreacionPersonaje": "2005-12-12"
+}
+
+### Eliminamos un registro de la BD frases
+DELETE http://localhost:3000/frases/656a3f149e0b96d45e939ab7
+
+### Actualizamos un registro de la base de datos 
+PATCH http://localhost:3000/frases/65729c579e52586ef0c4b276
+Content-Type: application/json
+
+{
+    "character_name": "Jaguar D. Saul",
+    "origen": {
+        "nombreIP": "One Piece",
+        "fechaCreacionOrigen": "1997-12-12",
+        "media": "Anime", 
+        "genero": "Aventura/Fantasía"
+    },
+    "frases": [
+        {
+            "frase": "Derechichichichi...",
+            "fechaFrase": "2005-12-12"
+        }
+    ],
+    "fechaCreacionPersonaje": "2005-12-12"
+}
